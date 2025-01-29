@@ -21,7 +21,6 @@ taskInput.addEventListener("keydown", (event) => {
 });
 
 function createElement() {
-  
   increment++;
 
   let taskListElement = document.createElement("li");
@@ -46,23 +45,23 @@ function createElement() {
     // console.log(taskListElement.getAttribute("task-count"));
 
     taskArr.splice(taskCount, 1);
+    recount(taskArr);
   }
   removeTaskBtn.addEventListener("click", () => {
     removeTask();
-    reCount();
   });
 
   taskInput.value = "";
 }
 
-function displayArr(arr) {
-  for (i = 0; i < taskArr.length; i++) {
-    taskList.appendChild(arr[i]);
+function recount(arr) {
+  for (i = 1; i < arr.length; i++) {
+    arr[i].setAttribute("task-count", i);
   }
 }
 
-function reCount() {
+function displayArr(arr) {
   for (i = 0; i < taskArr.length; i++) {
-    taskArr[i].setAttribute("data-count", i);
+    taskList.appendChild(arr[i]);
   }
 }
