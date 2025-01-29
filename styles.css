@@ -34,31 +34,4 @@
   width: 25%;
   border-radius: 15px;
 }
-.fa-solid.fa-x {
-  color: red;
-  padding: 0.5em;
-  cursor: pointer;
-  transition: 0.1s ease-in-out;
-  font-size: 0.7rem;
-}
-.arrow-up,
-.arrow-down {
-  transition: 0.1s ease-in-out;
-}
-.fa-solid.fa-x:active,
-.arrow-up:active,
-.arrow-down:active {
-  background-color: rgba(216, 216, 216, 0.5);
-  scale: 0.8;
-}
-.task-text-container {
-  width: 70%;
-}
-.task-icons-container {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5em;
-  align-items: center;
-  justify-content: center;
-  width: 30%;
-}
+

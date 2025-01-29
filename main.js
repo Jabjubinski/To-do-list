@@ -6,24 +6,25 @@ const addTaskBtn = document.querySelector("#add-task-btn");
 
 const taskArr = [];
 
-addTaskBtn.addEventListener("click", () => {
-  //task quantity
+function pushToArray() {
   let increment = 0;
+
   increment++;
 
-  //task list element creation
-  let taskElement = document.createElement("li");
+  let taskListElement = document.createElement("li");
 
-  taskElement.innerHTML = `
-  <div class="task-text-container">${taskInput.value}</div><div class="task-icons-container">
-  <i class="fa-solid fa-x task-icon remove-btn"></i><i class="fa-solid fa-arrow-up task-icon arrow-up"></i>
-  <i class="fa-solid fa-arrow-up arrow-down task-icon fa-rotate-180"></i>
-  </div>`;
-  //adding classes to created list item/task
-  taskElement.classList.add("task-list-element");
-  const removeBtn = taskElement.querySelector(".remove-btn");
+  taskListElement.classList.add(".task-list-element");
 
-  removeBtn.addEventListener("click", () => {
-    taskList.remove(taskElement);                 
-  });
+  taskListElement.innerHTML = `${increment})
+  ${taskInput.value}`;
+
+  taskArr.push(taskListElement);
+
+  for (i = 0; i < taskArr.length; i++) {
+    taskList.appendChild(taskArr[i]);
+  }
+}
+
+addTaskBtn.addEventListener("click", () => {
+  pushToArray();
 });
